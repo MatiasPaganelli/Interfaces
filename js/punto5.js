@@ -7,14 +7,14 @@ function degradeColores(){
   let imageData = ctx.createImageData(canvas.width, canvas.height);
   let primeraMitad = canvas.width / 2;
   for (let x = 0; x< primeraMitad; x++){
-    for(let y = 0; y<imageData.heigth; y++){
+    for(let y = 0; y<canvas.height; y++){
       let colorprimeraMitad = (x / primeraMitad) * 255;
       setDegrade(imageData, x, y, colorprimeraMitad, colorprimeraMitad, 0, 255);
     }
     
   }
   for(let x = primeraMitad; x < imageData.width; x++ ){
-    for(y = 0; y < imageData.height; y++){
+    for(y = 0; y < canvas.height; y++){
       let colorSegundaMitad = 255 - (x - primeraMitad) / primeraMitad * 255;
       setDegrade(imageData, x, y, 255, colorSegundaMitad, 0, 255);
     }
