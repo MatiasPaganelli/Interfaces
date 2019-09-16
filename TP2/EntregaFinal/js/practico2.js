@@ -7,6 +7,7 @@ let poligono1 = new Poligono();
 let active = false;
 let move = false;
 let clickeo = false;
+let teclac = false;
 let xInicial , yInicial;
 document.getElementById('cerrarPoligono').addEventListener("click",()=>{
     poligono1.closePoligono()
@@ -35,6 +36,7 @@ canvas.addEventListener("mouseup", (event)=>{
     active = false;
     move = false;
     clickeo = false;
+    teclac=false;
     
 })
 
@@ -67,18 +69,13 @@ canvas.addEventListener("mousemove", (event)=>{
 
 window.addEventListener("keydown", (event) =>{    
     if(event.key == "c"){
-    canvas.addEventListener("mousewheel", (event2) =>{  
-        console.log(event2.deltaY);
-        
+        teclac = true;
+    canvas.addEventListener("mousewheel", (event2) =>{       
     if(event2.deltaY > 0 && color < 100){
         color += 0.05;
     } else  if(event2.deltaY < 0 && color > 0){
         color -= 0.05;
     }
-    console.log(color);
-    
-
-
 
     if(color >= 0 && color <= 15){
          cambiarColor("#350101","#162801", "#8D8D00"  )
@@ -97,6 +94,12 @@ window.addEventListener("keydown", (event) =>{
     }
     })
 }
+window.addEventListener("keyup", (event) =>{
+    if(event.key == "c"){
+    teclac= false;
+    }
+})
+
 });
 
 function cambiarColor(colorCirculos,colorCentro,colorLineas){
