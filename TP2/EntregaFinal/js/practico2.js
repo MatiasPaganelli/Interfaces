@@ -70,37 +70,39 @@ canvas.addEventListener("mousemove", (event)=>{
 window.addEventListener("keydown", (event) =>{    
     if(event.key == "c"){
         teclac = true;
-    canvas.addEventListener("mousewheel", (event2) =>{       
-    if(event2.deltaY > 0 && color < 100){
-        color += 0.05;
-    } else  if(event2.deltaY < 0 && color > 0){
-        color -= 0.05;
+        canvas.addEventListener("mousewheel", (event2) =>{  
+            if(teclac){
+                if(event2.deltaY > 0 && color < 100){
+                    color += 0.05;
+                } else  if(event2.deltaY < 0 && color > 0){
+                    color -= 0.05;
+                }
+                
+                if(color >= 0 && color <= 15){
+                    cambiarColor("#350101","#162801", "#8D8D00"  )
+                }else if(color >15 && color<=35){
+                    cambiarColor("#6C0202","#203B01","#A9A900")
+                }else if(color >35 && color <=50){
+                    cambiarColor("#C20202","#305A02","#C8C800")
+                }else if(color >50 && color <=65){
+                    cambiarColor("#ff0000","#458301","#ffff00")
+                }else if( color >65 && color <=80){
+                    cambiarColor("#FF8686","#57A601","#FFFF46" )
+                }else if (color >80 && color <=90){
+                    cambiarColor("#FFADAD","#6CCD01","#FFFF6F")
+                }else if (color >90 && color <=100){
+                    cambiarColor("#FFE5E5","#BAFF6D","#FFFFA5")
+                }
+            }   
+        })
     }
-
-    if(color >= 0 && color <= 15){
-         cambiarColor("#350101","#162801", "#8D8D00"  )
-    }else if(color >15 && color<=35){
-        cambiarColor("#6C0202","#203B01","#A9A900")
-    }else if(color >35 && color <=50){
-        cambiarColor("#C20202","#305A02","#C8C800")
-    }else if(color >50 && color <=65){
-        cambiarColor("#ff0000","#458301","#ffff00")
-    }else if( color >65 && color <=80){
-        cambiarColor("#FF8686","#57A601","#FFFF46" )
-    }else if (color >80 && color <=90){
-        cambiarColor("#FFADAD","#6CCD01","#FFFF6F")
-    }else if (color >90 && color <=100){
-        cambiarColor("#FFE5E5","#BAFF6D","#FFFFA5")
-    }
-    })
-}
+    
+});
 window.addEventListener("keyup", (event) =>{
     if(event.key == "c"){
-    teclac= false;
+        teclac= false;
     }
 })
-
-});
 
 function cambiarColor(colorCirculos,colorCentro,colorLineas){
     poligono1.getCirculos().forEach(element => {
@@ -116,10 +118,10 @@ canvas.addEventListener("dblclick", (event) =>{
     for(let i = 0; i < poligono1.getCirculos().length; i++){
         if(poligono1.getCirculos()[i].clickenCirculo(event.layerX,event.layerY)){   
             clickeo = true;      
-        poligono1.borrarCirculo(i);
-        poligono1.clearCanvas();
-        poligono1.redrawCanvas()
-};
+            poligono1.borrarCirculo(i);
+            poligono1.clearCanvas();
+            poligono1.redrawCanvas()
+        };
     }
     
 });
