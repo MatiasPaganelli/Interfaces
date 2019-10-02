@@ -39,7 +39,10 @@ function gameLoop(){
                 $(".love"+vidas).hide();
                 vidas--;
                 $(".dinosaurioCorrer").removeClass("dinosaurioCorrer").addClass("dinosaurioColisionado");
-                $(".dinosaurioColisionado").removeClass("dinosaurioColisionado").addClass("dinosaurioCorrer");
+                setTimeout(function(){
+                    $(".dinosaurioColisionado").removeClass("dinosaurioColisionado").addClass("dinosaurioCorrer");
+                    },80);
+               
             } else if (vidas == 1){
                 $(".love1").hide();
                 $(".dinosaurioCorrer").removeClass("dinosaurioCorrer").addClass("dinosaurioMuerto");
