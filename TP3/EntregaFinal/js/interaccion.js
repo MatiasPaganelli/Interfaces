@@ -6,7 +6,10 @@ var vidas = 3;
 let colision = false
 let roca = document.getElementById("roca"); 
 let valorRoca = 2500;
+var puntaje = 0;
 function gameLoop(){
+    puntaje += 1;
+    document.getElementById('puntaje').innerHTML = "Puntaje:"+puntaje;
     function update(){
         $(document).keydown(function(event){  
             if(event.key == "w"){
@@ -47,6 +50,8 @@ function gameLoop(){
                 $(".love1").hide();
                 $(".dinosaurioCorrer").removeClass("dinosaurioCorrer").addClass("dinosaurioMuerto");
                 finalizado();
+                alert("Su puntaje fue:" +puntaje);
+                puntaje.pause();
             }
             
         } 
@@ -81,12 +86,13 @@ function gameLoop(){
                 update();
                 globalID = requestAnimationFrame(gameLoop);  
                 function finalizado(){
-                    alert("El juego ha finalizado");
+                    //alert("El juego ha finalizado");
                     document.getElementById('dinosaurio').style.webkitAnimationPlayState = 'paused';
                     document.getElementById('roca').style.webkitAnimationPlayState = 'paused'; 
                     document.getElementById('fondo').style.webkitAnimationPlayState = 'paused';
-                    document.getElementById('roca').hide();
+                   
                 }
+        
             }
             
             window.requestAnimationFrame(gameLoop);  
