@@ -30,7 +30,7 @@ function gameLoop(){
             }, 800);
         }
         function traerPiedra(){
-            if(valorRoca >= 5){            
+            if(valorRoca >= -100){            
                 document.getElementById("roca").style.left = (valorRoca)+'px';
                 valorRoca = valorRoca - 10;
             }else{
@@ -70,7 +70,7 @@ function gameLoop(){
                 r: a.position().left + a.width(), 
                 b: a.position().top + a.height()};
                 var b_pos =  {t : b.position().top, 
-                    l: b.position().left+239, 
+                    l: b.position().left+259, 
                     r: b.position().left + b.width(), 
                     b: b.position().top + b.height()};
                     
