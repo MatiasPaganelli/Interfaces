@@ -10,7 +10,7 @@ h1{
 body {
     background:white;
   }
-  .love1 ,.love2, .love3 {
+  .vida1 ,.vida2, .vida3 {
     display: inline-block;
     position: relative;
     top: 0%;
@@ -104,9 +104,7 @@ body {
     position: absolute;
     overflow: hidden;
     align-content: center;
-    top: 60%;
-    left: 100%;
-    transform: translate(-100%, -70%);
+    top: 15%;
     width: 1024px;
     height: 462px;
     background: url('../spritesheets/Fondo/fondo2.png') left top;

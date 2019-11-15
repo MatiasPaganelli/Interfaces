@@ -32,7 +32,7 @@ function gameLoop(){
         function traerPiedra(){
             if(valorRoca >= 50){            
                 document.getElementById("roca").style.left = (valorRoca)+'px';
-                valorRoca = valorRoca - 20;
+                valorRoca = valorRoca - 10;
             }else{
                 valorRoca = 2500;
                 colision = false;
@@ -42,7 +42,7 @@ function gameLoop(){
         if(DetectarColision() && !colision){
             colision = true;
             if (vidas>1) {
-                $(".love"+vidas).hide();
+                $(".vida"+vidas).hide();
                 vidas--;
                 $(".dinosaurioCorrer").removeClass("dinosaurioCorrer").addClass("dinosaurioColisionado");
                 setTimeout(function(){
@@ -50,7 +50,7 @@ function gameLoop(){
                     },80);
                
             } else if (vidas == 1){
-                $(".love1").hide();
+                $(".vida1").hide();
                 $(".dinosaurioCorrer").removeClass("dinosaurioCorrer").addClass("dinosaurioMuerto");
                 finalizado();
                 puntaje.pause();
@@ -70,7 +70,7 @@ function gameLoop(){
                 r: a.position().left + a.width(), 
                 b: a.position().top + a.height()};
                 var b_pos =  {t : b.position().top, 
-                    l: b.position().left+209, 
+                    l: b.position().left+239, 
                     r: b.position().left + b.width(), 
                     b: b.position().top + b.height()};
                     
@@ -90,7 +90,7 @@ function gameLoop(){
                 update();
                 globalID = requestAnimationFrame(gameLoop);  
                  function finalizado(){
-                     document.getElementById('dinosaurio').style.webkitAnimationPlayState = 'paused';
+                     //document.getElementById('dinosaurio').style.webkitAnimationPlayState = 'paused';
                      document.getElementById('roca').style.webkitAnimationPlayState = 'paused'; 
                      document.getElementById('fondo').style.webkitAnimationPlayState = 'paused';
                      //document.getElementById("fondo").style.webkitFilter = "blur(3px)";
