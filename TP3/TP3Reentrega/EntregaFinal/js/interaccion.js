@@ -30,7 +30,7 @@ function gameLoop(){
             }, 800);
         }
         function traerPiedra(){
-            if(valorRoca >= 50){            
+            if(valorRoca >= 5){            
                 document.getElementById("roca").style.left = (valorRoca)+'px';
                 valorRoca = valorRoca - 10;
             }else{
