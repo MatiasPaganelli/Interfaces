@@ -8,21 +8,28 @@
     <title>Practico 3</title>
 </head>
 <body>
-    <h1>Practico Numero 3</h1>
     <div id="fondo" class="fondo1">
-        <h1>Presione "w" para saltar</h1>
-        <div id="puntaje"> <p>Puntaje:</p></div>
+        <div id="puntaje"></div>
         <div id="roca"></div>
-        <div class="vida1"></div>  
-        <div class="vida2"></div>  
-        <div class="vida3"></div>        
+        <div class="vida1" id="vida1"></div>  
+        <div class="vida2" id="vida2"></div>  
+        <div class="vida3" id="vida3"></div>        
         <div id="dinosaurio" class="dinosaurioCorrer"></div>
         <div class="vida"></div>
-        <div id="gameover"><h2>Game Over</h2>
-            <p  id="puntuacionFinal">Puntaje:</p>
-        </div>
-        
     </div> 
+    <div id="gameover"><h2>Game Over</h2>
+        <p  id="puntuacionFinal">Puntaje:</p>
+        <button type="button" class="btn btn-VolveraJugar" id="volverajugar">Volver a Jugar</button>
+    </div>
+    <div id="inicio"><h2>DINO RUNNER</h2>
+        <h4>El juego consiste en realizar la mayor cantidad de Kilometros con el dinosaurio, saltando los obstaculos que se presenten</h4>
+        <h3>Presione la tecla "w" para saltar los obstaculos</h3>
+        <button type="button" class="btn btn-Inicio" id="comenzar">Comenzar</button>
+
+    </div>
+    <div id="fondo2" class="fondo2">
+        </div>
+    
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/interaccion.js"></script>
