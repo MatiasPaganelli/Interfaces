@@ -142,3 +142,4 @@ gameLoop = function (){
             document.getElementById('vida2').style.visibility = 'hidden'; 
             document.getElementById('vida3').style.visibility = 'hidden'; 
             document.getElementById("fondo").style.webkitFilter = "blur(8px)";
+            document.getElementById('volverajugar').style.visibility = 'hidden'; 
