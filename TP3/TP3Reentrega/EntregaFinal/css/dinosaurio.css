@@ -43,13 +43,13 @@ body {
   position: absolute;
   top: 20%;
   left: 40%;
-  transform: translate(-50%, -60%);
+  transform: translate(0%, -60%);
   width: 240px;
   height: 174px;
   margin: 15% auto;
   background: url('../spritesheets/Muerto1.png') left top;
-  animation: muerto .8s steps(8) forwards;    
-  animation-fill-mode: forwards;
+  animation: muerto .8s steps(8);    
+  animation-fill-mode: forwards; 
   
   
 }
@@ -146,6 +146,7 @@ html, body {
 
 #gameover  {
   position: relative;
+  left: 5%;
   visibility: hidden;
   padding: 1em;
   font-family: "Press Start 2P", Arial, sans-serif;

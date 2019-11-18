@@ -55,8 +55,7 @@ gameLoop = function (){
                 puntaje.pause();
             }
             
-        } 
-        
+        }        
         // Funcion colision
         function DetectarColision(){
             /// "a" y "b" deben ser dos objetos HTMLElement
