@@ -88,15 +88,16 @@ gameLoop = function (){
                 idFrame = window.requestAnimationFrame(gameLoop);
             }
             function finalizado(){
-                document.getElementById('dinosaurio').style.webkitAnimationPlayState = 'paused';
                 document.getElementById('roca').style.webkitAnimationPlayState = 'paused'; 
                 document.getElementById('fondo').style.webkitAnimationPlayState = 'paused';
+                document.getElementById('dinosaurio').style.webkitAnimationPlayState = 'paused';
+                window.cancelAnimationFrame(idFrame);
                 document.getElementById("fondo").style.webkitFilter = "blur(8px)";
                 document.getElementById('gameover').style.visibility = 'visible';
                 document.getElementById('puntaje').style.visibility = 'hidden';
                 document.getElementById('volverajugar').style.visibility = 'visible';
                 document.getElementById('puntuacionFinal').innerHTML = "Puntaje: " +puntaje;
-                window.cancelAnimationFrame(idFrame);
+                
                 
             }
             function start(){
@@ -127,9 +128,6 @@ gameLoop = function (){
                 puntaje = 0;
                 vidas = 3;
                 document.getElementById('puntaje').style.visibility = 'visible'; 
-                //document.getElementById('vida1').style.display = 'show'; 
-                //document.getElementById('vida2').style.display = 'show'; 
-                //document.getElementById('vida3').style.display = 'show'; 
                 $('#vida1').show();
                 $('#vida2').show();
                 $('#vida3').show();
